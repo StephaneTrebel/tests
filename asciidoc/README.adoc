@@ -1,3 +1,7 @@
+= Asciidoc Cheat Sheet / Sink
+
+== Text Formatting
+
 bold *constrained* & **un**constrained
 
 italic _constrained_ & __un__constrained
@@ -12,9 +16,7 @@ monospace italic `_constrained_` & ``__un__``constrained
 
 monospace bold italic `*_constrained_*` & ``**__un__**``constrained
 
-// = Document Title (Level 0)
-
-== Level 1 Section Title
+== Section Titles
 
 === Level 2 Section Title
 
@@ -27,7 +29,7 @@ monospace bold italic `*_constrained_*` & ``**__un__**``constrained
 == Another Level 1 Section Title
 
 
-Unordered lists:
+== Unordered lists
 
 * Edgar Allen Poe
 * Sheri S. Tepper
@@ -47,7 +49,7 @@ Unordered lists:
 * level 1
 
 
-Ordered lists:
+== Ordered lists
 
 . Step 1
 . Step 2
@@ -69,7 +71,7 @@ Ordered lists:
 . level 1
 
 
-Mixed lists:
+== Mixed lists
 
 Operating Systems::
 Linux:::
@@ -91,18 +93,17 @@ IaaS:::
     . Rackspace
 
 
-Checklist:
+== Checklists
 
 * [*] checked
-
 * [x] also checked
-
 * [ ] not checked
+* normal list item
 
-*     normal list item
 
+== Links
 
-External:
+=== External
 
 https://asciidoctor.org - automatic!
 
@@ -111,11 +112,11 @@ https://asciidoctor.org[Asciidoctor]
 https://github.com/asciidoctor[Asciidoctor @ *GitHub*]
 
 
-Relative:
+=== Relative
 
 link:index.html[Docs]
 
-Inline anchors:
+Inline anchors (see in devtools inspector):
 
 [[bookmark-a]]Inline anchors make arbitrary content referenceable.
 
@@ -132,7 +133,7 @@ See <<paragraphs>> to learn how to write paragraphs.
 Learn how to organize the document into <<section-titles,sections>>.
 
 
-Images:
+== Images
 
 image::sunset.jpg[]
 
@@ -140,7 +141,7 @@ image::sunset.jpg[Sunset]
 
 .A mountain sunset
 [#img-sunset]
-[caption="Figure 1: ",link=https://www.flickr.com/photos/javh/5448336655]
+[caption="Figure 1: ",link=https://live.staticflickr.com/5293/5448336655_ea8e647de2_h.jpg]
 image::sunset.jpg[Sunset,300,200]
 
 Inline:
@@ -152,7 +153,7 @@ Click image:icons/pause.png[title="Pause"] when you need a break.
 image:sunset.jpg[Sunset,150,150,role="right"] What a beautiful sunset!
 
 
-Code block with title and syntax highlighting:
+== Code block with title and syntax highlighting
 
 .app.rb
 [source,ruby]
@@ -194,6 +195,8 @@ Table with a title, three columns, a header, and two rows of content:
 |===
 
 
+== Admonitions
+
 AsciiDoc provides five admonition style labels out-of-the-box:
 
 NOTE: Please note that...
@@ -218,32 +221,37 @@ While werewolves are hardy community members, keep in mind the following dietary
 . Celery makes them sad.
 ====
 
+== Table of Contents
 
-Document with ToC:
-
-== AsciiDoc Writer's Guide
+=== AsciiDoc Writer's Guide
 Doc Writer <doc.writer@asciidoctor.org>
 v1.0, 2019-08-01
+
+
 :toc:
 
 Document with ToC positioned on the right:
 
-== AsciiDoc Writer's Guide
+=== AsciiDoc Writer's Guide
 Doc Writer <doc.writer@asciidoctor.org>
 v1.0, 2014-08-01
+
+
 :toc: right
 
-Include Files
+== Include Files
 
-== Reference Documentation
+=== Reference Documentation
+
 Lead Developer
 
 This is documentation for project X.
 
-// include::basics.adoc[]
+`include::basics.adoc[]`
 
-// include::installation.adoc[]
+`include::installation.adoc[]`
 
-// include::example.adoc[]
+`include::example.adoc[]`
 
-include::https://raw.githubusercontent.com/asciidoctor/asciidoctor/master
+`include::https://raw.githubusercontent.com/asciidoctor/asciidoctor/master/README.adoc[]`
+include::https://raw.githubusercontent.com/asciidoctor/asciidoctor/master/README.adoc[]
