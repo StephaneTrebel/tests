@@ -1,0 +1,249 @@
+bold *constrained* & **un**constrained
+
+italic _constrained_ & __un__constrained
+
+bold italic *_constrained_* & **__un__**constrained
+
+monospace `constrained` & ``un``constrained
+
+monospace bold `*constrained*` & ``**un**``constrained
+
+monospace italic `_constrained_` & ``__un__``constrained
+
+monospace bold italic `*_constrained_*` & ``**__un__**``constrained
+
+// = Document Title (Level 0)
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+===== Level 4 Section Title
+
+====== Level 5 Section Title
+
+== Another Level 1 Section Title
+
+
+Unordered lists:
+
+* Edgar Allen Poe
+* Sheri S. Tepper
+* Bill Bryson
+
+
+- Edgar Allen Poe
+- Sheri S. Tepper
+- Bill Bryson
+
+
+* level 1
+** level 2
+*** level 3
+**** level 4
+***** level 5
+* level 1
+
+
+Ordered lists:
+
+. Step 1
+. Step 2
+. Step 3
+
+
+. Step 1
+. Step 2
+.. Step 2a
+.. Step 2b
+. Step 3
+
+
+. level 1
+.. level 2
+... level 3
+.... level 4
+..... level 5
+. level 1
+
+
+Mixed lists:
+
+Operating Systems::
+Linux:::
+    . Fedora
+    * Desktop
+    . Ubuntu
+    * Desktop
+    * Server
+BSD:::
+    . FreeBSD
+    . NetBSD
+
+Cloud Providers::
+PaaS:::
+    . OpenShift
+    . CloudBees
+IaaS:::
+    . Amazon EC2
+    . Rackspace
+
+
+Checklist:
+
+* [*] checked
+
+* [x] also checked
+
+* [ ] not checked
+
+*     normal list item
+
+
+External:
+
+https://asciidoctor.org - automatic!
+
+https://asciidoctor.org[Asciidoctor]
+
+https://github.com/asciidoctor[Asciidoctor @ *GitHub*]
+
+
+Relative:
+
+link:index.html[Docs]
+
+Inline anchors:
+
+[[bookmark-a]]Inline anchors make arbitrary content referenceable.
+
+[#bookmark-b]#Inline anchors can be applied to a phrase like this one.#
+
+anchor:bookmark-c[]Use a cross reference to link to this location.
+
+[[bookmark-d,last paragraph]]The xreflabel attribute will be used as link text in the cross-reference link.
+
+Internal cross-references:
+
+See <<paragraphs>> to learn how to write paragraphs.
+
+Learn how to organize the document into <<section-titles,sections>>.
+
+
+Images:
+
+image::sunset.jpg[]
+
+image::sunset.jpg[Sunset]
+
+.A mountain sunset
+[#img-sunset]
+[caption="Figure 1: ",link=https://www.flickr.com/photos/javh/5448336655]
+image::sunset.jpg[Sunset,300,200]
+
+Inline:
+
+Click image:icons/play.png[Play, title="Play"] to get the party started.
+
+Click image:icons/pause.png[title="Pause"] when you need a break.
+
+image:sunset.jpg[Sunset,150,150,role="right"] What a beautiful sunset!
+
+
+Code block with title and syntax highlighting:
+
+.app.rb
+[source,ruby]
+----
+require 'sinatra'
+
+get '/hi' do
+"Hello World!"
+end
+----
+
+Code block with callouts:
+
+[source,ruby]
+----
+require 'sinatra' // <1>
+
+get '/hi' do // <2>
+"Hello World!" // <3>
+end
+----
+<1> Library import
+<2> URL mapping
+<3> HTTP response body
+
+Table with a title, three columns, a header, and two rows of content:
+
+.Table Title
+|===
+|Name of Column 1 |Name of Column 2 |Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
+
+
+AsciiDoc provides five admonition style labels out-of-the-box:
+
+NOTE: Please note that...
+
+TIP: Pro tip...
+
+IMPORTANT: Don't forget...
+
+WARNING: Watch out for...
+
+CAUTION: Ensure that...
+
+Admonitions can also encapsulate any block content:
+
+[IMPORTANT]
+.Feeding the Werewolves
+====
+While werewolves are hardy community members, keep in mind the following dietary concerns:
+
+. They are allergic to cinnamon.
+. More than two glasses of orange juice in 24 hours makes them howl in harmony with alarms and sirens.
+. Celery makes them sad.
+====
+
+
+Document with ToC:
+
+== AsciiDoc Writer's Guide
+Doc Writer <doc.writer@asciidoctor.org>
+v1.0, 2019-08-01
+:toc:
+
+Document with ToC positioned on the right:
+
+== AsciiDoc Writer's Guide
+Doc Writer <doc.writer@asciidoctor.org>
+v1.0, 2014-08-01
+:toc: right
+
+Include Files
+
+== Reference Documentation
+Lead Developer
+
+This is documentation for project X.
+
+// include::basics.adoc[]
+
+// include::installation.adoc[]
+
+// include::example.adoc[]
+
+include::https://raw.githubusercontent.com/asciidoctor/asciidoctor/master
